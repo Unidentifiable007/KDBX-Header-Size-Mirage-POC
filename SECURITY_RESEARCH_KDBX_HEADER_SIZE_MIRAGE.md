@@ -197,6 +197,7 @@ The exact approach would depend on the KDBX specification requirements and legit
 ## Conclusion
 A 23-byte file triggers a 1 GiB allocation request, an approximately 46.7-million-to-1 ratio between input size and requested allocation. before successful authentication is established. The allocation happens before EOF is detected.
 
+Also tried this in KeyPassXC but it rejected the file stating what field size it was expecting but only seeing a tiny one, no increased allocation was observed.
 Possible review points:
 1. Is this allocation-before-validation ordering intentional?
 2. Is a reasonable max field size appropriate?
