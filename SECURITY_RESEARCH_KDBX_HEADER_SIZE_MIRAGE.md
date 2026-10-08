@@ -57,12 +57,12 @@ byte[] pb = MemUtil.Read(m_s, nCount);  // nCount is attacker-controlled
 `MemUtil.Read()` allocates immediately:
 
 ```csharp
-byte[] pb = new byte[nCount];  // <- Allocation happens here
+byte[] pb = new byte[nCount];  //Allocation happens here
 int iOffset = 0;
 while(nCount > 0)
 {
     int iRead = s.Read(pb, iOffset, nCount);
-    if(iRead == 0) break;  // <- EOF discovered only during read loop
+    if(iRead == 0) break;  
     iOffset += iRead;
     nCount -= iRead;
 }
